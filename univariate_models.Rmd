@@ -80,7 +80,7 @@ names(acer)[1] = 'cover'
 ```
 
 
-```{r}
+```{r, pairs, warning=FALSE}
 # prior to model fitting I will visually examine correlations with cover
 pairs(acer, lower.panel = panel.cor, upper.panel = panel.smooth)
 pairs(abies, lower.panel = panel.cor, upper.panel = panel.smooth)
@@ -157,7 +157,8 @@ Anova(acer_lm, type=3)
 ```
 
 Overall the model for *Acer rubrum* explained `r round(summary(acer_lm)$adj.r.squared, 2) * 100`% of the variance in cover based upon the computed adjusted $R^2$. 
-This actually would not necessarily be considered a terrible $R^2$ value if it were not for the systematic deviations we already observed in the 
+This actually would not necessarily be considered a terrible $R^2$ value if it were not for the systematic deviations we already observed in the fitted and residual
+values of the model which indicate a fundamentally flawed model. 
 
 The strongest correlations for this species are negative with respect to `elev`, `tci` and `beers` as evidenced by their negative t-values which were significantly different than zero. 
 This indicates that this species prefers lower elevations that are dryer and warmer.
