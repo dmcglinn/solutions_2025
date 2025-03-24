@@ -6,7 +6,7 @@ output: pdf_document
 ---
 
 ```{r setup, echo=FALSE}
-# setutp the R enviornment for kniting markdown doc properly
+# setutp the R environment for kniting markdown doc properly
 library(knitr)
 opts_knit$set(root.dir='../', tidy=TRUE)
 ```
